@@ -1,0 +1,35 @@
+= form_for(@task) do |f|
+  - if @task.errors.any?
+    #error_explanation
+      %h5
+        Please correct the following
+        - pluralize(@task.errors.count, "error")
+        and resubmit the form:
+
+      %ul
+      - @task.errors.full_messages.each do |msg|
+        %li
+          = msg
+
+  %fieldset
+    %legend
+      %h3
+        Task:
+    .field
+      = f.label :title
+      %br
+      = f.text_field :title
+    .field
+      = f.label :body
+      %br
+      = f.text_field :body
+    .field.two
+      = f.label :due
+      %br
+      = f.datetime_select :due
+    .field
+      = f.label :complete
+      %br
+      = f.check_box :complete
+    .actions
+      = f.submit 'Create Task', :class => 'button radius'

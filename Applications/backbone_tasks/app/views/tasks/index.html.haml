@@ -1,0 +1,33 @@
+%form
+  %fieldset
+    %legend
+      %h3
+        Listing tasks
+    .row
+
+      %table
+        %tr
+          %th Title
+          %th Body
+          %th Due
+          %th Complete
+          %th
+          %th
+          %th
+
+
+          - @tasks.each do |task|
+            %tr
+              %td= task.title
+              %td= task.body
+              %td= task.due
+              %td= task.complete
+              %td.button.small.radius.dropdown{:href => "#"}
+                Do more
+                %ul
+                  %li= link_to 'Show', task
+                  %li= link_to 'Edit', edit_task_path(task)
+                  %li= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }
+%br
+
+  = link_to 'New Task', new_task_path, :class => "button radius"

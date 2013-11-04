@@ -1,0 +1,26 @@
+%script{:id => 'show_task-template', :type => 'text/x-handlebars-template'}
+
+  %form
+    %fieldset
+      %legend#notice
+        {{ notice }}
+
+      %p
+        %b Title:
+        {{ @task.title }}
+
+      %p
+        %b Body:
+        {{ @task.body }}
+
+      %p
+        %b Due:
+        {{ @task.due }}
+
+      %p
+        %b Complete:
+        {{ @task.complete }}
+
+
+    = link_to 'Edit', '#/tasks/edit', :class => "button radius" |
+    = link_to 'Back', '', :class => "button radius"

@@ -1,0 +1,24 @@
+== Todo application
+
+The todo application is a standard one. You can add new tasks, edit the
+existing ones and you can delete tasks as well. The sole purpose of this app
+is to understand the purpose and use of HAML gem.
+
+HAML is a very beautiful gem that takes away the pain of going through some
+of those unnecessary things that we have to do in order to write code in the
+common HTML language. HAML or the HTML Abstraction Markup Language takes away
+all the unnecessay things ane leaves only the essential ones behind.
+
+This tool link:http://html2haml.heroku.com/ can be used to convert the HAML
+code for the HTMl.ERB files.
+
+But a better option is to run this command:
+       html2haml your_erb_file new_haml_file
+
+
+If you need to convert all the files at once, then use this:
+link:http://xpressivecode.com/2012/2/9/rails-rake-task-for-html2haml.aspx
+
+
+The HAML tutorial link:http://haml.info/tutorial.html
+

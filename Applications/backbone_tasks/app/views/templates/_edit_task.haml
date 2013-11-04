@@ -1,0 +1,15 @@
+%script{:id => 'edit_task-template', :type => 'text/x-handlebars-template'}
+  .row
+    .eight.centered.columns
+      %h3.alert-box.alert
+        Please edit the details here
+      %form
+        %input#title{:value => '{{task.title}}'}
+        %input#body{:value => '{{task.body}}'}
+        %input#due{:value => '{{task.due}}'}
+        %input#complete{:value => '{{task.complete}}'}
+        %a.button.radius#update UPDATE
+
+
+  = link_to 'Show', @task, :class => "button radius" |
+  = link_to 'Back', "/", :class => "button radius"

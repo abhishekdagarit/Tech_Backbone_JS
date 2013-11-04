@@ -1,0 +1,20 @@
+!!!
+%html{:lang => "en"}
+  / <![endif]
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %title= content_for?(:title) ? yield(:title) : "Untitled"
+
+    / Included CSS Files
+    = stylesheet_link_tag "application"
+    / Included JS Files
+    = javascript_include_tag "application"
+    / Added the following files as a JS template
+    = csrf_meta_tags
+
+    = render :partial => 'templates/show_task'
+    = render :partial => 'templates/edit_task'
+    = render :partial => 'templates/index'
+  %body
+    = yield
